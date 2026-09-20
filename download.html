@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghorsam — Android Download</title>
+  <meta name="description" content="Download Ghorsam, a smart medication reminder and personal health assistant for Android.">
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #f4f7fb, #e8eef8);
+      color: #18212f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(760px, 100%);
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(20,40,80,.14);
+    }
+    .brand { font-size: 18px; font-weight: 700; letter-spacing: .04em; }
+    h1 { margin: 10px 0 8px; font-size: clamp(32px, 6vw, 52px); }
+    .lead { color: #5b6575; font-size: 18px; line-height: 1.6; }
+    .download {
+      display: inline-block;
+      margin: 24px 0 28px;
+      padding: 15px 24px;
+      border-radius: 14px;
+      background: #18212f;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .download:hover { opacity: .9; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin: 8px 0 28px;
+    }
+    .item {
+      padding: 16px;
+      border-radius: 14px;
+      background: #f5f7fa;
+    }
+    .label { display:block; color:#697386; font-size:13px; margin-bottom:5px; }
+    .value { font-weight:700; }
+    .note {
+      border-left: 4px solid #c98a00;
+      background: #fff8e6;
+      padding: 14px 16px;
+      border-radius: 10px;
+      line-height: 1.55;
+      color: #594300;
+    }
+    .fa { margin-top: 30px; direction: rtl; text-align: right; }
+    .small { color:#6d7685; font-size:14px; line-height:1.6; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0e141d; color:#eef2f7; }
+      .card { background: rgba(24,31,43,.96); border-color: rgba(255,255,255,.08); }
+      .lead,.small { color:#aeb8c7; }
+      .item { background:#202938; }
+      .download { background:#eef2f7; color:#111827; }
+      .note { background:#332a13; color:#f4d98b; border-color:#d5a82d; }
+    }
+    @media (max-width: 560px) {
+      .card { padding: 26px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">💊 GHORSAM</div>
+    <h1>Download Ghorsam</h1>
+    <p class="lead">
+      Smart medication reminders and personal health tracking for Android.
+    </p>
+
+    <a class="download" href="https://github.com/Shahzad55/ghorsam/releases/latest/download/app-debug.apk">
+      Download APK — Ghorsam v1.0
+    </a>
+
+    <section class="grid" aria-label="Android compatibility">
+      <div class="item"><span class="label">App version</span><span class="value">1.0 (versionCode 1)</span></div>
+      <div class="item"><span class="label">APK type</span><span class="value">Debug APK</span></div>
+      <div class="item"><span class="label">Minimum Android</span><span class="value">Android 7.0 — API 24</span></div>
+      <div class="item"><span class="label">Target Android</span><span class="value">Android 16 — API 36</span></div>
+      <div class="item"><span class="label">Compile SDK</span><span class="value">Android API 36.1</span></div>
+      <div class="item"><span class="label">Architecture</span><span class="value">Android APK build</span></div>
+    </section>
+
+    <div class="note">
+      <strong>Important:</strong> The current downloadable build is a debug APK produced by GitHub Actions.
+      GitHub may require you to sign in to download workflow artifacts, and artifacts are retained for a limited period.
+      A permanent public release APK will be published separately when a signed release build is available.
+    </div>
+
+    <div class="fa">
+      <h2>نسخه اندروید و دانلود</h2>
+      <p>
+        این نسخه از قرصام با <strong>Android 7.0 (API 24)</strong> به بالا سازگار است.
+        نسخه هدف برنامه <strong>Android 16 (API 36)</strong> است.
+      </p>
+      <p>
+        نسخه فعلی برنامه <strong>1.0</strong> با <strong>versionCode 1</strong> است و فایل فعلی
+        <strong>Debug APK</strong> می‌باشد.
+      </p>
+      <p class="small">
+        با دکمه بالا می‌توانید فایل APK را مستقیماً دانلود کنید. لینک همیشه به آخرین نسخه Release اشاره می‌کند.
+      </p>
+    </div>
+
+    <p class="small">
+      Medical safety: Ghorsam is a reminder and tracking tool, not a substitute for a physician,
+      pharmacist, caregiver, diagnosis, or emergency medical service.
+    </p>
+  </main>
+</body>
+</html>
