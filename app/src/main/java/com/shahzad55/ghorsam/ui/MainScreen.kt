@@ -1936,7 +1936,7 @@ fun AddCaregiverDialog(
                 OutlinedTextField(
                     value = name,
                     onValueChange = { name = it },
-                    label = { Text("نام فرد مراقب (مثلا: دخترم مریم)", fontSize = getFontSize(12f).sp) },
+                    label = { Text("نام فرد مراقب (مثلا: دخترم منیژه)", fontSize = getFontSize(12f).sp) },
                     modifier = Modifier.fillMaxWidth()
                 )
 
