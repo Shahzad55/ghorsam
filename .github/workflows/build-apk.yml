@@ -52,14 +52,28 @@ jobs:
       - name: Build APK (clean)
         run: gradle --no-daemon clean assembleDebug
 
-      - name: Verify MainActivity is packaged
+      - name: Verify APK package and MainActivity
         run: |
           APK="app/build/outputs/apk/debug/app-debug.apk"
-          unzip -p "$APK" classes.dex | strings | grep -q "com/shahzad55/ghorsam/MainActivity" || {
-            echo "ERROR: com/shahzad55.ghorsam.MainActivity is missing from classes.dex"
+          echo "=== APK contents ==="
+          unzip -l "$APK" | grep -E 'classes[0-9]*\.dex|AndroidManifest.xml' || true
+
+          echo "=== MainActivity check across ALL DEX files ==="
+          FOUND=0
+          while IFS= read -r DEX; do
+            echo "Checking $DEX"
+            if unzip -p "$APK" "$DEX" | grep -a -q "com/shahzad55/ghorsam/MainActivity"; then
+              echo "OK: MainActivity found in $DEX"
+              FOUND=1
+            fi
+          done < <(unzip -Z1 "$APK" | grep -E '^classes[0-9]*\.dex$')
+
+          if [ "$FOUND" -ne 1 ]; then
+            echo "ERROR: MainActivity was not found in any DEX file."
             exit 1
-          }
-          echo "OK: MainActivity is present in the APK"
+          fi
+
+          echo "OK: MainActivity is present in the APK."
 
       - name: Upload Android 16 APK artifact
         uses: actions/upload-artifact@v4
@@ -80,6 +94,6 @@ jobs:
           else
             gh release create "$TAG" "$APK" \
               --title "Ghorsam v1.3 — Clean Android 16 Test" \
-              --notes "Ghorsam Android 1.3 (versionCode 4), built for Android 16 / API 36. Minimum Android 7.0 / API 24. Debug APK for phone testing." \
+              --notes "Ghorsam Android 1.2 (versionCode 3), built for Android 16 / API 36. Minimum Android 7.0 / API 24. Debug APK for phone testing." \
               --latest
           fi
