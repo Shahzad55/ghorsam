@@ -49,8 +49,17 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
-      - name: Build APK
-        run: gradle --no-daemon assembleDebug
+      - name: Build APK (clean)
+        run: gradle --no-daemon clean assembleDebug
+
+      - name: Verify MainActivity is packaged
+        run: |
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+          unzip -p "$APK" classes.dex | strings | grep -q "com/shahzad55/ghorsam/MainActivity" || {
+            echo "ERROR: com/shahzad55.ghorsam.MainActivity is missing from classes.dex"
+            exit 1
+          }
+          echo "OK: MainActivity is present in the APK"
 
       - name: Upload Android 16 APK artifact
         uses: actions/upload-artifact@v4
