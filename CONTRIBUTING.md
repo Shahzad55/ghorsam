@@ -2,7 +2,7 @@
 
 از اینکه می‌خواهید به پروژه **قرصام (Ghorsam)** کمک کنید متشکریم! 💊
 
-Thank you for your interest in contributing to **Ghorsam**!
+Thank you for your interest in contributing to **Ghorsam**
 
 ---
 
