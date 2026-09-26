@@ -2,11 +2,28 @@
 
 ### Smart Medication Reminder & Personal Health Assistant for Android
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.x-blue.svg)](https://kotlinlang.org)
+[![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-green.svg)](https://developer.android.com/jetpack/compose)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 **قرصام (Ghorsam)** یک اپلیکیشن اندرویدی برای **یادآوری مصرف دارو، ثبت سوابق مصرف، پایش اطلاعات سلامت و کمک به مراقبین خانواده** است که با **Kotlin و Jetpack Compose** توسعه داده شده است.
 
 این پروژه با تمرکز بر تجربه‌ی ساده و قابل‌دسترس برای کاربران، به‌خصوص سالمندان، طراحی شده و قابلیت بررسی محلی اطلاعات ثبت‌شده‌ی داروها را نیز در اختیار دارد.
 
 > ⚠️ این برنامه یک ابزار کمکی برای مدیریت و یادآوری دارو است و جایگزین پزشک، داروساز یا تشخیص پزشکی حرفه‌ای نیست.
+
+---
+
+## 🤝 کمک می‌خواهیم! | We need contributors
+
+پروژه متن‌باز است و از مشارکت شما استقبال می‌کند.
+
+- بخوانید: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Issueهای مناسب شروع: برچسب **`good first issue`**
+- منشور رفتاری: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+This is an open-source project. PRs and issues are welcome!
 
 ---
 
@@ -76,87 +93,29 @@ Ghorsam should **not be used as the sole safeguard** to ensure correct medicatio
 
 بررسی ایمنی دارو به‌صورت محلی روی دستگاه انجام می‌شود و برای این قابلیت به سرویس خارجی یا کلید API نیاز نیست.
 
-بررسی شامل مواردی مانند:
-
-- نام دارو
-- مقدار مصرف
-- زمان مصرف
-- تعداد دفعات مصرف
-- توضیحات دارو
-- شناسایی برخی موارد مشکوک یا نیازمند بررسی بیشتر
-
-نتیجه به زبان فارسی و با پیام ساده برای کاربر نمایش داده می‌شود.
-
-> بررسی محلی صرفاً یک قابلیت کمکی است و نباید به‌عنوان تأیید پزشکی یا تجویز دارو در نظر گرفته شود.
-
 ### 🔊 Persian Text-to-Speech
 
-برنامه دارای دستیار صوتی مبتنی بر Android Text-to-Speech است.
-
-قابلیت‌ها:
-
-- اعلام زمان مصرف دارو
-- اعلام وضعیت عملیات
-- اعلام هشدار
-- اعلام تأیید مصرف
-- پشتیبانی از زبان فارسی در صورت وجود موتور TTS مناسب
+برنامه دارای دستیار صوتی مبتنی بر Android Text-to-Speech است (پشتیبانی از زبان فارسی در صورت وجود موتور TTS مناسب).
 
 ### 👵 Elderly Mode
 
-برای کاربران سالمند یک حالت دسترسی ویژه در نظر گرفته شده است.
-
-در این حالت:
-
-- اندازه فونت افزایش پیدا می‌کند
-- رابط کاربری خواناتر می‌شود
-- پیام‌های صوتی فعال‌تر می‌شوند
-- عناصر اصلی برای استفاده ساده‌تر طراحی شده‌اند
-
-همچنین امکان تغییر بین حالت کاربری عادی و سالمندان وجود دارد.
+حالت دسترسی ویژه برای سالمندان: فونت بزرگ‌تر، رابط خواناتر، پیام‌های صوتی فعال‌تر.
 
 ### ❤️ Health Tracking
 
-کاربر می‌تواند اطلاعات روزانه سلامت خود را ثبت کند، از جمله:
-
-- فشار خون سیستولیک
-- فشار خون دیاستولیک
-- ضربان قلب
-- وضعیت عمومی
-- یادداشت روزانه سلامت
-
-سوابق در دیتابیس محلی برنامه ذخیره می‌شوند.
+ثبت فشار خون، ضربان قلب، وضعیت عمومی و یادداشت روزانه سلامت.
 
 ### 📋 Medication Intake History
 
-هر بار مصرف دارو می‌تواند در قالب یک `IntakeLog` ثبت شود.
-
-وضعیت‌های موجود:
-
-- `TAKEN`
-- `MISSED`
-- `SNOOZED`
-
-همچنین امکان ثبت عوارض جانبی مرتبط با مصرف دارو وجود دارد.
+ثبت وضعیت‌های `TAKEN` / `MISSED` / `SNOOZED` و عوارض جانبی.
 
 ### 👨‍👩‍👧 Caregiver Support
 
-برنامه امکان تعریف مخاطبین مراقب را فراهم می‌کند.
-
-برای هر مراقب می‌توان موارد زیر را ذخیره کرد:
-
-- نام
-- شماره تلفن
-- فعال یا غیرفعال بودن هشدار اضطراری
-
-در صورت عدم پاسخ کاربر به هشدار دارو، برنامه وضعیت هشدار مراقب را ثبت و نمایش می‌دهد.
-
-> در نسخه فعلی، ارسال واقعی SMS یا پیام اضطراری به عنوان یک سرویس مخابراتی مستقل پیاده‌سازی نشده و مکانیزم هشدار در سطح برنامه مدیریت می‌شود.
+تعریف مخاطبین مراقب و نمایش هشدار در صورت عدم پاسخ به یادآوری دارو.
 
 ---
 
 ## 🏗️ Architecture
-
-ساختار اصلی برنامه بر اساس معماری تفکیک‌شده‌ی UI، ViewModel و Data Layer طراحی شده است.
 
 ```
 ┌─────────────────────────────┐
@@ -179,11 +138,6 @@ Ghorsam should **not be used as the sole safeguard** to ensure correct medicatio
                ▼
 ┌─────────────────────────────┐
 │         Room Database       │
-│                             │
-│  Medications                │
-│  Intake Logs                │
-│  Health Notes               │
-│  Caregiver Contacts         │
 └─────────────────────────────┘
 ```
 
@@ -193,43 +147,22 @@ Ghorsam should **not be used as the sole safeguard** to ensure correct medicatio
 
 ```
 ghorsam/
-│
 ├── app/
-│   ├── build.gradle.kts
-│   │
-│   └── src/
-│       ├── main/
-│       │   ├── AndroidManifest.xml
-│       │   │
-│       │   ├── java/com/example/
-│       │   │   ├── MainActivity.kt
-│       │   │   │
-│       │   │   ├── data/
-│       │   │   │   ├── AppDatabase.kt
-│       │   │   │   ├── Entities.kt
-│       │   │   │   ├── MedicationDao.kt
-│       │   │   │   └── MedicationRepository.kt
-│       │   │   │
-│       │   │   └── ui/
-│       │   │       ├── MainScreen.kt
-│       │   │       ├── MedicationViewModel.kt
-│       │   │       └── theme/
-│       │   │           ├── Color.kt
-│       │   │           ├── Theme.kt
-│       │   │           └── Type.kt
-│       │   │
-│       │   └── res/
-│       │
-│       ├── test/
-│       └── androidTest/
-│
+│   └── src/main/java/com/shahzad55/ghorsam/
+│       ├── MainActivity.kt
+│       ├── data/
+│       │   ├── AppDatabase.kt
+│       │   ├── Entities.kt
+│       │   ├── MedicationDao.kt
+│       │   └── MedicationRepository.kt
+│       └── ui/
+│           ├── MainScreen.kt
+│           ├── MedicationViewModel.kt
+│           └── theme/
 ├── gradle/
-│   └── libs.versions.toml
-│
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── .env.example
+├── LICENSE
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
 └── README.md
 ```
 
@@ -239,21 +172,14 @@ ghorsam/
 
 | Technology | Usage |
 |---|---|
-| **Kotlin** | Main programming language |
-| **Jetpack Compose** | Modern Android UI |
-| **Material 3** | UI components and design system |
+| **Kotlin** | Main language |
+| **Jetpack Compose** | UI |
+| **Material 3** | Design system |
 | **Room** | Local database |
-| **ViewModel** | UI state and business logic |
-| **Kotlin Coroutines** | Asynchronous operations |
+| **ViewModel + Coroutines** | State & async |
 | **KSP** | Code generation |
-| **Retrofit** | HTTP/API communication |
-| **OkHttp** | Network layer |
-| **Moshi** | JSON serialization |
-| **Local Verification** | Local medication safety checks |
-| **Android TTS** | Voice assistance |
-| **Robolectric** | Unit testing |
-| **Roborazzi** | Screenshot/UI testing |
-| **Gradle Version Catalog** | Dependency management |
+| **Android TTS** | Persian voice |
+| **Robolectric / Roborazzi** | Testing |
 
 ---
 
@@ -264,185 +190,51 @@ Language: Kotlin
 minSdk: 24
 targetSdk: 36
 compileSdk: 36
-Java Compatibility: Java 11
+JDK: 17+ (required for Gradle)
 UI: Jetpack Compose
+Package: com.shahzad55.ghorsam
 ```
 
 ---
 
 ## 🚀 Build & Run
 
-Clone the repository:
+**Requirement: JDK 17 or later**
 
 ```bash
 git clone https://github.com/Shahzad55/ghorsam.git
 cd ghorsam
+./gradlew clean assembleDebug
 ```
 
-Open the project in **Android Studio**.
-
-Then:
-
-1. Configure the required Android SDK.
-3. Sync Gradle.
-4. Build the project.
-5. Run it on an Android device or emulator.
+Or open the project in **Android Studio**, sync Gradle, and run on a device/emulator.
 
 ---
 
 ## 🧪 Testing
-
-The project contains both local and Android instrumentation tests.
 
 ```
 app/src/test/
 app/src/androidTest/
 ```
 
-Testing technologies currently included:
-
-- JUnit
-- AndroidX Test
-- Espresso
-- Robolectric
-- Roborazzi
-- Compose UI Testing
-
-Screenshot-based UI testing is also included.
-
----
-
-## 🔄 Data Model
-
-The application currently defines the following main entities:
-
-### Medication
-
-```
-id
-name
-dose
-time
-frequency
-notes
-colorIndex
-isActive
-isVerified
-verificationMsg
-```
-
-### IntakeLog
-
-```
-id
-medId
-medName
-scheduledTime
-actualTime
-status
-sideEffects
-```
-
-### DailyHealthNote
-
-```
-id
-date
-note
-systolicBP
-diastolicBP
-heartRate
-generalStatus
-```
-
-### CaregiverContact
-
-```
-id
-name
-phone
-isEmergencyAlertEnabled
-```
-
----
-
-## 🧠 Medication Verification Architecture
-
-The medication verification flow is fully local:
-
-```
-              Add Medication
-                    │
-                    ▼
-          Medication Saved Locally
-                    │
-                    ▼
-          Local Safety Verification
-                    │
-                    ▼
-             Verification Result
-                    │
-                    ▼
-              Stored in Room DB
-```
-
-This keeps the verification feature available without requiring an external service or API credentials.
-
----
-
-## 🎨 User Experience
-
-The UI is designed around a Persian-language user experience with emphasis on:
-
-- Readability
-- Large interactive elements
-- Simple medication workflows
-- Accessibility
-- Voice feedback
-- Elderly-friendly interaction
-- Clear medication status
-- Health information at a glance
-
----
-
-## 🔒 Privacy & Security
-
-The application is primarily designed around local storage using Room.
-
-The medication verification feature runs locally and does not require sending medication information to an external service.
-
-### Security recommendations
-
-- Do not commit API keys.
-- Use environment/secret management for production.
-- Avoid storing unnecessary personal information.
-- Protect caregiver contact information.
-- Review network traffic before production deployment.
-- Use a secure backend/proxy if exposing an AI API key directly from a distributed Android application is not acceptable.
+JUnit, AndroidX Test, Espresso, Robolectric, Roborazzi, Compose UI Testing.
 
 ---
 
 ## 🚧 Project Status
 
-**Current version:** `1.3`  
-**Version code:** `4`  
-**Build:** Debug APK
+**Current version:** under active development
 
-The project is currently under active development.
+Possible future improvements:
 
-Possible future improvements include:
-
-- 🔔 Background/real scheduled notifications
-- 📲 Android notification channels
-- ⌚ Wear OS integration
-- 📡 Real caregiver notifications
-- 📱 SMS / messaging integration
-- 📊 Health history charts
-- 🗓️ Improved Persian calendar support
-- 🔐 Stronger local data protection
-- ☁️ Optional encrypted cloud synchronization
-- 🧪 More advanced local medication-safety checks
-- 🌍 Multi-language support
+- Real scheduled notifications (AlarmManager / WorkManager)
+- Wear OS integration
+- Real caregiver SMS / messaging
+- Health history charts
+- Better Persian calendar support
+- Multi-language support
+- More tests and documentation
 
 ---
 
@@ -450,38 +242,20 @@ Possible future improvements include:
 
 **Ghorsam is a medication-management and reminder application, not a medical diagnostic system.**
 
-Medication verification results must not be treated as medical advice.
-
-Always consult a qualified physician or pharmacist before changing:
-
-- Medication
-- Dosage
-- Frequency
-- Treatment plan
-
-Never stop or modify prescribed medication solely based on an application or AI-generated recommendation.
+Always consult a qualified physician or pharmacist before changing medication, dosage, or treatment plan.
 
 ---
 
 ## 📄 License
 
-No open-source license has currently been specified for this repository.
-
-Unless a license is added, the source code should be treated as **all rights reserved**.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 👨‍💻 Author
 
-**Shahzad55**
-
-GitHub:
-
-https://github.com/Shahzad55
-
-Project:
-
-https://github.com/Shahzad55/ghorsam
+**Shahzad55** — [GitHub](https://github.com/Shahzad55)  
+Project: [https://github.com/Shahzad55/ghorsam](https://github.com/Shahzad55/ghorsam)
 
 ---
 
@@ -489,4 +263,5 @@ https://github.com/Shahzad55/ghorsam
 
 **Remember your medication. Track your health. Stay connected.**
 
-> Built with Kotlin • Jetpack Compose • Room
+> Built with Kotlin • Jetpack Compose • Room  
+> Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)
